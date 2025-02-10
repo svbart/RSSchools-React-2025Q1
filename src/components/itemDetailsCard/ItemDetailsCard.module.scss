@@ -1,27 +1,9 @@
-.SearchSection {
-  width: 80%;
-  padding: 10px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: burlywood;
-}
-.errorMessage {
-  padding: 30px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
-
 .details {
   width: 38%;
-  height: fit-content;
-  min-height: 210px;
   background-color: burlywood;
   border-radius: 5px;
 }
+
 .resultsSection {
   width: 80%;
   display: flex;
@@ -30,6 +12,7 @@
   border-radius: 5px;
   background-color: transparent;
 }
+
 .detailsHeader {
   display: flex;
   justify-content: center;

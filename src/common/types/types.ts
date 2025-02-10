@@ -10,6 +10,8 @@ export interface PlanetCharacteristics {
   terrain: string;
   surfaceWater: string;
   population: string;
+  url: string;
+  films: string | string[];
 }
 
 export interface ChildrenAsProps {

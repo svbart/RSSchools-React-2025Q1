@@ -1,12 +1,12 @@
 .ResultsList {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-content: space-between;
 }
 .header {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 5px;
   padding: 5px 0;
@@ -16,19 +16,7 @@
   border-radius: 5px;
   background-color: chocolate;
   font-size: 22px;
-  // color: beige;
 }
-// .header {
-//   width: 90%;
-//   margin: 0 auto;
-//   margin-bottom: 20px;
-//   padding: 20px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-radius: 5px;
-//   background-color: burlywood;
-// }
 
 .col1 {
   width: 30%;

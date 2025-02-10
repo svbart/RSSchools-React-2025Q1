@@ -1,11 +1,5 @@
-import { Component, SyntheticEvent } from 'react';
+const SearchButton = () => {
+  return <button type="submit">Search</button>;
+};
 
-interface SearchButtonProps {
-  onButtonClick: (event: SyntheticEvent) => void;
-}
-
-export default class SearchButton extends Component<SearchButtonProps> {
-  render() {
-    return <button onClick={this.props.onButtonClick}>Search</button>;
-  }
-}
+export default SearchButton;

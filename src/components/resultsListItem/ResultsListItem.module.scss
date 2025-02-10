@@ -6,54 +6,55 @@
 }
 
 .item {
-  width: 90%;
-  margin: 0 auto;
-  box-sizing: border-box;
+  width: 100%;
+   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-radius: 5px;
   background-color: burlywood;
-  border: 5px solid chocolate
+  border: 5px solid chocolate;
 }
 
 .col1 {
   width: 30%;
-  min-height: 240px;
+  min-height: 160px;
   vertical-align: middle;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
   line-height: 100px;
-  color:beige;
+  color: beige;
+  border-radius: 5px;
   background-image: url('../../assets/images/space1.webp');
   background-size: cover;
 }
 
 .col2 {
   width: 70%;
-  padding: 5px;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
+  border-radius: 5px;
 }
 .row {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background-color: burlywood;  
+  background-color: burlywood;
 }
-.rowCol1{
+.rowCol1 {
   width: 40%;
   text-align: center;
+  box-sizing: border-box;
   border-radius: 3px;
+  border-bottom: 1px dashed burlywood;
   font-weight: bold;
   background-color: chocolate;
 }
-.rowCol2{
+.rowCol2 {
   width: 70%;
-  padding: 2px;
   box-sizing: border-box;
   text-align: center;
   border-bottom: 1px dashed chocolate;
