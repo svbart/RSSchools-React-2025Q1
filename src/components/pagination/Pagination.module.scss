@@ -5,15 +5,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
-// .button {
-//   margin: 0 5px;
-//   padding: 5px 10px;
-//   border-radius: 5px;
-//   background-color: burlywood;
-//   color: #213547;
-//   font-weight: bold;
-//   cursor: pointer;
-// }
 .pageNumber {
   margin: 0 5px;
   padding: 5px 10px;
@@ -21,4 +12,7 @@
   background-color: chocolate;
   color: #213547;
   font-weight: bold;
+  &.light {
+    background-color: #238df0;
+  }
 }

@@ -1,0 +1,19 @@
+.themeBtnContainer {
+  width: 80%;
+  display: flex;
+  justify-content: right;
+  margin-bottom: 10px;
+}
+
+.themeButton {
+  font-size: 14px;
+  padding: 0.5rem;
+}
+.light {
+  background-color: #333;
+  color: #fff;
+}
+.dark {
+  background-color: #f5f5f5;
+  color: #333;
+}

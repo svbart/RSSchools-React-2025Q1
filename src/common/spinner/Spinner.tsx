@@ -1,7 +1,12 @@
+import { useTheme } from '../../contexts/ThemeContext';
 import classes from './Spinner.module.scss';
 
 const Spinner = () => {
-  return <div className={classes.spinner}></div>;
+  const themeContext = useTheme();
+  const darkMode = themeContext?.darkMode;
+  const theme = darkMode ? classes.dark : classes.light;
+
+  return <div className={`${classes.spinner} ${theme}`}></div>;
 };
 
 export default Spinner;

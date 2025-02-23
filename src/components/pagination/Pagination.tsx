@@ -1,27 +1,38 @@
-import { FC, SyntheticEvent, useContext } from 'react';
+import { SyntheticEvent } from 'react';
 import classes from './Pagination.module.scss';
 import { useSearchParams } from 'react-router';
-import { PageContext, IPageContext } from '../../contexts/pageContext';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import {
+  setItemToShowDetails,
+  setPageNumber,
+} from '../../store/storeSlices/app-reducer';
+import { useTheme } from '../../contexts/ThemeContext';
 
-const Pagination: FC = () => {
-  const context: IPageContext | null = useContext(PageContext);
+const Pagination = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
+  const { currentPageData, pageNumber } = useAppSelector((state) => state.app);
+
+  const themeContext = useTheme();
+  const darkMode = themeContext?.darkMode;
+  const theme = darkMode ? classes.dark : classes.light;
 
   const handleButtonClick = (event: SyntheticEvent<HTMLButtonElement>) => {
-    if (!context) {
-      return;
-    }
+    event.preventDefault();
     const target = event.target as HTMLButtonElement;
-    let newPage = context.pageNumber;
-    if (target.textContent === 'Previous') newPage = context.pageNumber - 1;
-    if (target.textContent === 'Next') newPage = context.pageNumber + 1;
 
-    context.setPageNumber(newPage);
+    let newPageNumber = pageNumber;
+    if (target.textContent === 'Previous') newPageNumber = pageNumber - 1;
+    if (target.textContent === 'Next') newPageNumber = pageNumber + 1;
+
+    dispatch(setPageNumber(newPageNumber));
+    dispatch(setItemToShowDetails(null));
     const searchValue = searchParams.get('search') || '';
+
     setSearchParams(
       searchValue
-        ? { search: searchValue, page: newPage.toString() }
-        : { page: newPage.toString() }
+        ? { search: searchValue, page: newPageNumber.toString() }
+        : { page: newPageNumber.toString() }
     );
   };
 
@@ -30,15 +41,15 @@ const Pagination: FC = () => {
       <button
         className={classes.button}
         onClick={handleButtonClick}
-        disabled={context?.pageNumber === 1}
+        disabled={!currentPageData.previous}
       >
         Previous
-      </button>{' '}
-      <span className={classes.pageNumber}>{context?.pageNumber}</span>{' '}
+      </button>
+      <span className={`${classes.pageNumber} ${theme}`}>{pageNumber}</span>
       <button
         className={classes.button}
         onClick={handleButtonClick}
-        disabled={!context?.thereIsNext}
+        disabled={!currentPageData.next}
       >
         Next
       </button>

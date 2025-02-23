@@ -16,12 +16,21 @@
 }
 
 .details {
-  width: 38%;
+  width: 30%;
+  margin-left: 10px;
   height: fit-content;
   min-height: 210px;
-  background-color: burlywood;
   border-radius: 5px;
 }
+
+.light {
+  background-color: #ffebcd;
+}
+
+.dark {
+  background-color: burlywood;
+}
+
 .resultsSection {
   width: 80%;
   display: flex;

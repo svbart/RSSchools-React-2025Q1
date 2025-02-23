@@ -1,11 +1,14 @@
 .spinner {
   width: 40px;
   height: 40px;
-  // border: 10px solid rgba(235, 169, 125, 0.3);
   border: 10px solid rgba(236, 90, 23, 0.3);
   border-top-color: rgb(248, 88, 13);
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  &.light {
+    border: 10px solid rgba(63, 100, 150, 0.3);
+    border-top-color: #238df0;
+  }
 
   @keyframes spin {
     0% {

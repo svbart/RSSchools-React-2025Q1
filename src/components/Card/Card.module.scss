@@ -1,0 +1,79 @@
+.cardLink {
+  display: block;
+  width: calc(33.33% - 10px);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 5px solid chocolate;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:nth-child(3n + 1) {
+    // Убираем левый отступ у первой карточки в ряду
+    margin-left: 0;
+  }
+
+  &:nth-child(3n) {
+    // Убираем правый отступ у третьей карточки в ряду
+    margin-right: 0;
+  }
+}
+
+.cardVertical {
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardContent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+.planetNameSelect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planetName {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.planetDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailRow {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.detailLabel {
+  font-weight: bold;
+  width: 130px;
+}
+
+.detailValue {
+  flex-grow: 1; 
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.light {
+  background-color: #ffebcd;
+  border-color: #238df0;
+}
+
+.dark {
+  background-color: burlywood;
+}

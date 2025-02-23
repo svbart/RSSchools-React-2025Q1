@@ -1,32 +1,17 @@
-import { FC } from 'react';
-import ResultsListItem from '../resultsListItem/ResultsListItem';
-import { PlanetCharacteristics } from '../../common/types/types';
+import Card from '../Card/Card';
 import classes from './ResultsList.module.scss';
+import { useAppSelector } from '../../store/hooks';
+import { PlanetCharacteristics } from '../../common/types/types';
 
-interface ResultsListProps {
-  planets: PlanetCharacteristics[];
-  setSelectedPlanetId: React.Dispatch<React.SetStateAction<number | null>>;
-}
-
-const ResultsList: FC<ResultsListProps> = ({
-  planets,
-  setSelectedPlanetId,
-}) => {
+const ResultsList = () => {
+  const { currentPageData } = useAppSelector((state) => state.app);
+  const planets: PlanetCharacteristics[] = currentPageData.results;
+  console.log('planets', planets);
   return (
     <div className={classes.ResultsList}>
-      <div className={classes.header}>
-        <div className={classes.col1}>Planet Name</div>
-        <div className={classes.col2}>Planet Characteristics</div>
-      </div>
       {planets.length ? (
         planets.map((planet, index) => {
-          return (
-            <ResultsListItem
-              key={index}
-              planet={planet}
-              setSelectedPlanetId={setSelectedPlanetId}
-            />
-          );
+          return <Card key={index} planet={planet} />;
         })
       ) : (
         <div className={classes.noResults}>No results</div>

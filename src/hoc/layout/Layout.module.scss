@@ -4,8 +4,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: rgb(18, 18, 22);
-  background-image: url('../../assets/images/milkyWay.jpg');
 
   .main {
     height: 100%;
@@ -14,4 +12,14 @@
     align-items: center;
     flex-grow: 1;
   }
+}
+.dark {
+  background-color: rgb(18, 18, 22);
+  background-image: url('../../assets/images/milkyWay.jpg');
+}
+
+.light {
+  background-color: rgb(146, 201, 238);
+  background-image: url('../../assets/images/light1.jpg');
+  background-size: cover
 }
